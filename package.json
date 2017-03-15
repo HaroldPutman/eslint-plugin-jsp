@@ -1,0 +1,34 @@
+{
+  "name": "eslint-plugin-jsp",
+  "version": "0.0.0",
+  "description": "Process javascript in JSP files",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "repository": "HaroldPutman/eslint-plugin-jsp",
+  "author": "Harold Putman",
+  "main": "lib/index.js",
+  "scripts": {
+    "tap": "tap tests/test.js",
+    "lint": "eslint .",
+    "test": "npm run tap && npm run lint"
+  },
+  "dependencies": {
+    "execall": "~1.0.0",
+    "requireindex": "~1.1.0",
+    "lodash": "^4.17.4",
+    "split-lines": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~3.9.1",
+    "eslint-config-davidtheclark-node": "^0.1.1",
+    "eslint-plugin-node": "^2.0.0",
+    "tap": "^7.1.2"
+  },
+  "engines": {
+    "node": ">=5.7.0"
+  },
+  "license": "ISC"
+}
