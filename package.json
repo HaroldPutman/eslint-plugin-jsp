@@ -16,7 +16,6 @@
     "test": "npm run tap && npm run lint"
   },
   "dependencies": {
-    "execall": "~1.0.0",
     "requireindex": "~1.1.0",
     "lodash": "^4.17.4",
     "split-lines": "^1.1.0"
@@ -30,5 +29,5 @@
   "engines": {
     "node": ">=5.7.0"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
