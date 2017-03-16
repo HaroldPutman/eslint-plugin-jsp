@@ -1,0 +1,14 @@
+{
+  "plugins": ["node"],
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "rules": {
+    "brace-style": ["error", "1tbs"],
+    "curly": ["error", "multi-line"],
+    "indent": ["error", 2],
+    "no-var": "error",
+    "prefer-const": "error",
+    "quotes": ["error", "single", "avoid-escape"],
+    "semi": ["error", "always"],
+    "node/no-unpublished-require": ["off"]
+  }
+}
