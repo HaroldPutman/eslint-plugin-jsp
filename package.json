@@ -11,7 +11,7 @@
   "author": "Harold Putman",
   "main": "lib/index.js",
   "scripts": {
-    "tap": "tap tests/test.js",
+    "tap": "tap tests/test.js tests/lib/processors/process-line.js",
     "lint": "eslint .",
     "test": "npm run tap && npm run lint"
   },

@@ -1,6 +1,11 @@
 {
   "plugins": ["node"],
   "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "env": {
+    "amd": true,
+    "node": true,
+    "es6": true
+  },
   "rules": {
     "brace-style": ["error", "1tbs"],
     "curly": ["error", "multi-line"],
