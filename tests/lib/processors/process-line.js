@@ -66,6 +66,32 @@ test('xml elements', (assert) => {
   assert.end();
 });
 
+test('el expressions', (assert) => {
+  let result = process(    'var a = ${expression};');
+  assert.deepEqual(result, 'var a = /* express */;');
+  result = process(        'var a = ${param[\'mycom.productId\']};');
+  assert.deepEqual(result, 'var a = /* param[\'mycom.productI */;');
+  result = process(        'var a = ${param["mycom.productId"]};');
+  assert.deepEqual(result, 'var a = /* param["mycom.productI */;');
+  result = process(        'var a = ${"a" lt "}"};');
+  assert.deepEqual(result, 'var a = /* "a" lt  */;');
+  result = process(        'var a = ${\'a\' lt \'}\'};');
+  assert.deepEqual(result, 'var a = /* \'a\' lt  */;');
+  result = process(        'var a = ${a};');
+  assert.deepEqual(result, 'var a = /**/;');
+  result = process(        'var a = ${ab};');
+  assert.deepEqual(result, 'var a = /* */;');
+  result = process(        'var a = ${abc};');
+  assert.deepEqual(result, 'var a = /*  */;');
+  result = process(        'var a = ${abcd};');
+  assert.deepEqual(result, 'var a = /* a */;');
+  result = process(        'var a = ${syntax["erro};');
+  assert.deepEqual(result, 'var a = ${syntax["erro};');
+  result = process(        'var a = ${unterminated;');
+  assert.deepEqual(result, 'var a = ${unterminated;');
+  assert.end();
+});
+
 test('real examples', (assert) => {
   let result = process(' var hiddenBreadboxItems = <cqsearch:json attribute="advancedFilterQueries"/> /* jsp-result:{} */;');
   assert.deepEqual(result, ' var hiddenBreadboxItems = /* cqsearch:json attribute="advancedFilterQueri */ /* jsp-result:{} */;');
