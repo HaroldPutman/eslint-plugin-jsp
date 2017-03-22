@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-jsp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Process javascript in JSP files",
   "keywords": [
     "eslint",
