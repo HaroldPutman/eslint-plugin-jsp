@@ -36,3 +36,14 @@ test('jsp', (assert) => {
   assert.deepEqual(messages[1].column, 13);
   assert.end();
 });
+
+
+test('features', (assert) => {
+  const code = fixture('features.jsp');
+  const cli = createCliEngine();
+  const report = cli.executeOnText(code, 'features.jsp');
+  assert.equal(report.results[0].errorCount, 0);
+  assert.equal(report.results[0].warningCount, 0);
+  assert.deepEqual(report.results[0].messages, []);
+  assert.end();
+});
